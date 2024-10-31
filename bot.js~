@@ -23,7 +23,7 @@ function logMessage(message) {
 
 async function getData(url) {
   const parsedUrl = new URL(url);
-  if (['teraboxapp.com', 'terabox.com', '1024tera.com', 'teraboxlink.com', 'terafileshare.com', 'terabox.link', 'terasharelink.com'].includes(parsedUrl.hostname)) {
+  if (['teraboxapp.com', 'terabox.com', '1024tera.com', 'teraboxlink.com', 'terafileshare.com'].includes(parsedUrl.hostname)) {
     url = url.replace(parsedUrl.hostname, '1024terabox.com');
   }
 
@@ -62,7 +62,7 @@ bot.on('text', async (ctx) => {
   const userId = ctx.from.id;
 
   // Validate if the URL is a valid Terabox link
-  const teraboxDomains = ['terabox.com', '1024tera.com', 'teraboxapp.com', 'teraboxlink.com', 'terafileshare.com', 'terabox.link','terasharelink.com'];
+  const teraboxDomains = ['terabox.com', '1024tera.com', 'teraboxapp.com', 'teraboxlink.com', 'terafileshare.com'];
   const isValidTeraboxLink = teraboxDomains.some(domain => url.includes(domain));
 
   if (!isValidTeraboxLink) {
